@@ -12,6 +12,12 @@ export async function POST(request: NextRequest) {
     }
 
     const key = apiKey || process.env.DAJIALA_API_KEY || '';
+    if (!key) {
+      return NextResponse.json(
+        { error: '未配置API密钥，请设置DAJIALA_API_KEY环境变量或在请求中提供apiKey参数' },
+        { status: 400 }
+      );
+    }
     const sortType = sort === 'relevance' ? 1 : 2;
     const searchMode = mode === 'title' ? 2 : 1;
 

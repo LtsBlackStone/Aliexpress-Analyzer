@@ -259,8 +259,7 @@ export function analyzeArticles(
 
 export function generateReportMarkdown(result: AnalysisResult): string {
   const { titleAnalysis, topicCategories, interactionStats, topArticles } = result;
-  const now = new Date();
-  const dateStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+  const dateStr = new Date().toISOString().split('T')[0];
 
   let md = `# 公众号关键词分析报告：${result.keyword}\n\n`;
   md += `> 分析时间：${dateStr}\n`;
