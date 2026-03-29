@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import NavBar from "@/components/NavBar";
 
 export const metadata: Metadata = {
-  title: "速卖通商品数据分析工具",
-  description: "专业的速卖通商品数据分析和运营建议工具",
+  title: "数据分析工具集",
+  description: "速卖通商品数据分析 & 微信公众号关键词分析工具",
 };
 
 export default function RootLayout({
@@ -14,6 +15,7 @@ export default function RootLayout({
   return (
     <html lang="zh-CN">
       <body className="antialiased">
+        <NavBar />
         {children}
       </body>
     </html>
